@@ -1,0 +1,7 @@
+Arsitektur Model,Dim Laten,Training Time / Epoch (s),Latency GPU (ms / batch 64),Latency CPU (ms / batch 64),Test MSE,Test PSNR (dB),Test SSIM,FID Score,Kestabilan Training
+Vanilla AE,64,1.29,0.25 ± 0.04,0.91,0.00614,23.30,0.8733,N/A (latent voids),Stabil / Konvergen
+Sparse AE,64 (bottleneck) / 256 (sparse),1.43,0.25 ± 0.03,0.80,0.00624,23.24,0.8723,N/A (latent voids),Stabil / Konvergen
+VAE,64,1.69,0.18 ± 0.03,0.44,0.01292,19.74,0.7705,81.33,Stabil / Konvergen
+Vanilla GAN,100 (prior noise),2.90,0.24 ± 0.03,2.59,N/A (tanpa encoder),N/A,N/A,103.00,Relatif stabil / indikasi mode collapse
+DCGAN,100 (prior noise),17.82,8.98 ± 0.30,53.28,N/A (tanpa encoder),N/A,N/A,21.41,Relatif stabil
+DDPM,1x28x28 (dimensi citra),75.57,51019.22 ± 95.10,1706177.01,N/A (tanpa encoder),N/A,N/A,8.88,Stabil / Konvergen

@@ -1,0 +1,280 @@
+{
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "cpu_threads": 1,
+  "fid_n_generated": 5000,
+  "fid_n_real": 7000,
+  "models": {
+    "ae": {
+      "display": "Vanilla AE",
+      "latent_dim": "64",
+      "params": 435536,
+      "epochs": 50,
+      "train_time_per_epoch_s": 1.2880115736200013,
+      "test_mse": 0.006143989507108927,
+      "test_mse_std": 0.0053108022548258305,
+      "test_psnr": 23.297304153442383,
+      "test_psnr_std": 3.1412620544433594,
+      "test_ssim": 0.8733121752738953,
+      "test_ssim_std": 0.08537451177835464,
+      "sharpness_recon": 0.0865703821182251,
+      "latency_ms": {
+        "mean_ms": 0.24970278005639557,
+        "std_ms": 0.03612151690584825,
+        "median_ms": 0.23711300036666216,
+        "reps": 50,
+        "device": "cuda"
+      },
+      "latency_cpu_ms": {
+        "mean_ms": 0.9067201000107161,
+        "std_ms": 0.1361493613366296,
+        "median_ms": 0.871259499945154,
+        "reps": 20
+      },
+      "stability": {
+        "label": "Stabil / Konvergen",
+        "val_loss_final": 0.0062387951537966726,
+        "rel_range_last5": 0.012994646704139584,
+        "frac_epochs_val_increase": 0.14285714285714285
+      }
+    },
+    "sae": {
+      "display": "Sparse AE",
+      "latent_dim": "64 (bottleneck) / 256 (sparse)",
+      "params": 435536,
+      "epochs": 50,
+      "train_time_per_epoch_s": 1.4342176219600038,
+      "test_mse": 0.006236182991415262,
+      "test_mse_std": 0.005416450556367636,
+      "test_psnr": 23.24371337890625,
+      "test_psnr_std": 3.154329538345337,
+      "test_ssim": 0.8722866177558899,
+      "test_ssim_std": 0.08682584762573242,
+      "sharpness_recon": 0.08600962907075882,
+      "latency_ms": {
+        "mean_ms": 0.25060079993636464,
+        "std_ms": 0.031468348769107694,
+        "median_ms": 0.24116750000757747,
+        "reps": 50,
+        "device": "cuda"
+      },
+      "latency_cpu_ms": {
+        "mean_ms": 0.7981162499618222,
+        "std_ms": 0.07736776882385785,
+        "median_ms": 0.7856935003474064,
+        "reps": 20
+      },
+      "stability": {
+        "label": "Stabil / Konvergen",
+        "val_loss_final": 0.006574805493865694,
+        "rel_range_last5": 0.01905176031961218,
+        "frac_epochs_val_increase": 0.16326530612244897
+      }
+    },
+    "vae": {
+      "display": "VAE",
+      "latent_dim": "64",
+      "params": 451984,
+      "epochs": 50,
+      "train_time_per_epoch_s": 1.6920687740200016,
+      "test_mse": 0.012923281639814377,
+      "test_mse_std": 0.009004553779959679,
+      "test_psnr": 19.743324279785156,
+      "test_psnr_std": 2.699695110321045,
+      "test_ssim": 0.7704609632492065,
+      "test_ssim_std": 0.130617156624794,
+      "sharpness_recon": 0.0485859289765358,
+      "latency_ms": {
+        "mean_ms": 0.1802093399965088,
+        "std_ms": 0.0267104267090841,
+        "median_ms": 0.17386350009473972,
+        "reps": 50,
+        "device": "cuda"
+      },
+      "latency_cpu_ms": {
+        "mean_ms": 0.439462199983609,
+        "std_ms": 0.04027247112214112,
+        "median_ms": 0.4238025003360235,
+        "reps": 20
+      },
+      "sharpness_samples": 0.03438177332282066,
+      "mode_coverage": {
+        "class_hist": [
+          0.0843999981880188,
+          0.07240000367164612,
+          0.06759999692440033,
+          0.15160000324249268,
+          0.12600000202655792,
+          0.1306000053882599,
+          0.06780000030994415,
+          0.09539999812841415,
+          0.12020000070333481,
+          0.08399999886751175
+        ],
+        "entropy_ratio": 0.9828340963977399,
+        "kl_uniform": 0.03952595374233692,
+        "classes_covered": 10,
+        "mean_confidence": 0.7813901901245117
+      },
+      "fid": 81.33000946044922,
+      "stability": {
+        "label": "Stabil / Konvergen",
+        "val_loss_final": 241.11299687848773,
+        "rel_range_last5": 0.0010637060823657347,
+        "frac_epochs_val_increase": 0.1836734693877551
+      }
+    },
+    "gan": {
+      "display": "Vanilla GAN",
+      "latent_dim": "100 (prior noise)",
+      "params": 1486352,
+      "epochs": 100,
+      "train_time_per_epoch_s": 2.9038724727,
+      "latency_ms": {
+        "mean_ms": 0.23983822005902766,
+        "std_ms": 0.025898084149719502,
+        "median_ms": 0.23150299966800958,
+        "reps": 50,
+        "device": "cuda"
+      },
+      "latency_cpu_ms": {
+        "mean_ms": 2.5901975999659044,
+        "std_ms": 0.14270759072326347,
+        "median_ms": 2.572211999904539,
+        "reps": 20
+      },
+      "sharpness_samples": 0.24856765568256378,
+      "mode_coverage": {
+        "class_hist": [
+          0.12020000070333481,
+          0.09539999812841415,
+          0.11460000276565552,
+          0.12219999730587006,
+          0.10639999806880951,
+          0.07599999755620956,
+          0.09960000216960907,
+          0.0851999968290329,
+          0.09260000288486481,
+          0.08780000358819962
+        ],
+        "entropy_ratio": 0.9952683695091585,
+        "kl_uniform": 0.01089498183376758,
+        "classes_covered": 10,
+        "mean_confidence": 0.8721144795417786
+      },
+      "fid": 103.00447845458984,
+      "stability": {
+        "cv_loss_G_last25pct": 0.011197053939778353,
+        "loss_G_final": 0.9191438268580937,
+        "loss_D_final": 1.285348824986584,
+        "D_x_final": 0.544451932860836,
+        "D_G_z_final": 0.4562722320017749,
+        "grad_G_nonsat_final": 1.4348256514497,
+        "grad_G_saturating_final": 0.8203454613685608,
+        "mode_entropy_min": 0.3728781064982307,
+        "mode_entropy_final": 0.9935622771090084,
+        "label": "Relatif stabil / indikasi mode collapse"
+      }
+    },
+    "dcgan": {
+      "display": "DCGAN",
+      "latent_dim": "100 (prior noise)",
+      "params": 1781504,
+      "epochs": 30,
+      "train_time_per_epoch_s": 17.82051316080001,
+      "latency_ms": {
+        "mean_ms": 8.976905380095559,
+        "std_ms": 0.30195582771233875,
+        "median_ms": 8.92525699964608,
+        "reps": 50,
+        "device": "cuda"
+      },
+      "latency_cpu_ms": {
+        "mean_ms": 53.28487584997674,
+        "std_ms": 5.32259564586777,
+        "median_ms": 52.37128950011538,
+        "reps": 20
+      },
+      "sharpness_samples": 0.16540299355983734,
+      "mode_coverage": {
+        "class_hist": [
+          0.09080000221729279,
+          0.09920000284910202,
+          0.1103999987244606,
+          0.11720000207424164,
+          0.11020000278949738,
+          0.11180000007152557,
+          0.07900000363588333,
+          0.09440000355243683,
+          0.0966000035405159,
+          0.09040000289678574
+        ],
+        "entropy_ratio": 0.9971292599998729,
+        "kl_uniform": 0.0066101231301542995,
+        "classes_covered": 10,
+        "mean_confidence": 0.831575870513916
+      },
+      "fid": 21.407411575317383,
+      "stability": {
+        "cv_loss_G_last25pct": 0.005860383446906425,
+        "loss_G_final": 1.0921117989984277,
+        "loss_D_final": 1.1767524561109064,
+        "D_x_final": 0.5856472496708779,
+        "D_G_z_final": 0.414550975577472,
+        "grad_G_nonsat_final": 3.8794380012712524,
+        "grad_G_saturating_final": 1.6398690938949585,
+        "mode_entropy_min": 0.9358580013332637,
+        "mode_entropy_final": 0.9972015336234272,
+        "label": "Relatif stabil"
+      }
+    },
+    "ddpm": {
+      "display": "DDPM",
+      "latent_dim": "1x28x28 (dimensi citra)",
+      "params": 6138369,
+      "epochs": 40,
+      "train_time_per_epoch_s": 75.56842872852505,
+      "latency_ms": {
+        "mean_ms": 51019.217448999676,
+        "std_ms": 95.10216635052598,
+        "median_ms": 51084.40348499971,
+        "reps": 3,
+        "device": "cuda"
+      },
+      "latency_cpu_ms": {
+        "mean_ms": 1706177.0117529996,
+        "std_ms": 0.0,
+        "median_ms": 1706177.0117529996,
+        "reps": 1
+      },
+      "sharpness_samples": 0.14807648956775665,
+      "mode_coverage": {
+        "class_hist": [
+          0.10220000147819519,
+          0.10660000145435333,
+          0.08980000019073486,
+          0.09920000284910202,
+          0.11720000207424164,
+          0.09179999679327011,
+          0.07580000162124634,
+          0.12300000339746475,
+          0.07779999822378159,
+          0.11659999936819077
+        ],
+        "entropy_ratio": 0.9947172054716518,
+        "kl_uniform": 0.012164083930325198,
+        "classes_covered": 10,
+        "mean_confidence": 0.9014207124710083
+      },
+      "fid": 8.878674507141113,
+      "stability": {
+        "label": "Stabil / Konvergen",
+        "val_loss_final": 0.033266089030674524,
+        "rel_range_last5": 0.004586206877411849,
+        "frac_epochs_val_increase": 0.0
+      }
+    }
+  },
+  "fid_reference_val_vs_test": 4.508473873138428,
+  "sharpness_real_test": 0.16985127329826355
+}
