@@ -6,7 +6,7 @@ Tugas Take-Home Deep Learning (D6421) Sesi 07: Generative Models.
 |---|---|
 | Nama | Ariya Saddhana Lius |
 | NIM | 2802394456 |
-| Kelas | _(isi kelas)_ |
+| Kelas | LB01 |
 | Dataset | Fashion-MNIST (70.000 citra 28x28 grayscale, 10 kelas) |
 
 Repositori ini mengimplementasikan, melatih, dan mengevaluasi enam model generatif: Vanilla AE, Sparse AE, VAE, Vanilla GAN, DCGAN, dan DDPM. Selain itu ada eksperimen pembuktian bahwa bobot dan fitur laten MLP Classifier tidak dapat dipakai untuk image generation (Bagian 2 panduan).
@@ -72,10 +72,10 @@ Uji cepat tanpa GPU (subset kecil, 1 epoch, DDPM dengan T = 50): `DL07_QUICK=1 b
 |---|---|---|---|
 | MLP Classifier | 784-256-64-10, ReLU, dropout 0,2 | z_MLP 64 (post-ReLU) | Cross-entropy |
 | Vanilla AE | Enc 784-256-64, Dec 64-256-784 (sigmoid) | 64 | MSE |
-| Sparse AE | sama dengan AE | 64 + kode sparse 256 | MSE + λ·mean\|h\|, λ = 1e-3 |
-| VAE | Enc 784-256-(μ, log σ²), Dec 64-256-784 | 64 | BCE + KL |
+| Sparse AE | sama dengan AE | 64 + kode sparse 256 | MSE + Î»Â·mean\|h\|, Î» = 1e-3 |
+| VAE | Enc 784-256-(Î¼, log ÏƒÂ²), Dec 64-256-784 | 64 | BCE + KL |
 | Vanilla GAN | G: 100-256-512-1024-784 (tanh), D: 784-512-256-1 | 100 | BCE non-saturating |
-| DCGAN | G: ConvT 100→256@7→128@14→1@28, D: Conv 1→64→128→1 | 100 | BCE non-saturating |
+| DCGAN | G: ConvT 100â†’256@7â†’128@14â†’1@28, D: Conv 1â†’64â†’128â†’1 | 100 | BCE non-saturating |
 | DDPM | U-Net 64-128-128 + self-attention 7x7, EMA 0,999 | 1x28x28 | MSE prediksi derau |
 
 Encoder AE sengaja dibuat identik dengan ekstraktor fitur MLP Classifier (784-256-64), dan decoder AE identik dengan decoder yang dilatih pada z_MLP beku (Tahap 4). Dengan begitu, perbedaan kualitas rekonstruksi antara keduanya hanya berasal dari objektif yang dipakai untuk melatih encoder.
